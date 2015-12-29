@@ -19,4 +19,10 @@ Code to take in yahoo finance data and upload to mysql database. drop csv in 'wa
 +---------------+-------------+------+-----+-------------------+-----------------------------+
 
 2. Config file should carry all the values needed by GetProperties class.
+3. Necessary external jar files needed in build path. Java (java-8-oracle)
+  opencsv-3.6.jar
+  mysql-connector-java-3.1.14-bin.jar
+  jcommon-1.0.23.jar
+  jfreechart-1.0.19.jar
+  jfxrt.jar
 
