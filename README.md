@@ -1,6 +1,6 @@
-# PriceLoader
+# PriceLoader - read in raw format to see database description.
 
-code to take in yahoo finance data and upload to mysql database.
+Code to take in yahoo finance data and upload to mysql database. drop csv in 'watched dir' and it will upload data to datda
 
 1. create database with the following columns
 
@@ -18,4 +18,5 @@ code to take in yahoo finance data and upload to mysql database.
 | timestamp_all | timestamp   | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
 +---------------+-------------+------+-----+-------------------+-----------------------------+
 
-2. config file should carry all the values
+2. Config file should carry all the values needed by GetProperties class.
+
