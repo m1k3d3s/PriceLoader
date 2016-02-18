@@ -1,41 +1,17 @@
 package com.mpd.app;
 
 import java.io.File;
-import java.util.Date;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
+import java.io.IOException;
 
 public class JaxConverter {
 	
-	
-	public static void main(String[] args){
-		Date date = new Date();
-		HistoricalPrice hp = new HistoricalPrice();
-		hp.setAdjclose((float) 2.40);
-		hp.setClose((float)2.38);
-		hp.setDate(date.toString());
-		hp.setHigh((float)3.01);
-		hp.setLow((float)2.14);
-		hp.setOpen((float)2.30);
-		hp.setStock("TEST");
-		hp.setVolume(123456);
-		
-		try {
-			File file = new File("/home/mikedes/testfile.xml");
-			JAXBContext jaxbContext = JAXBContext.newInstance(HistoricalPrice.class);
-			Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-			
-			jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-			
-			jaxbMarshaller.marshal(hp, file);
-			jaxbMarshaller.marshal(hp, System.out);
-			
-		} catch(JAXBException e) {
-			e.printStackTrace();
-			
-			
-		}
+    //Date,Open,High,Low,Close,Volume,Adj Close,StocYk
+    //2016-02-11,1.35,1.37,1.29,1.31,2639700,1.31,FNMA
+    //2016-02-10,1.39,1.42,1.37,1.38,1459400,1.38,FNMA
+
+	public static void main(String[] args) throws IOException{
+        File csvfile = new File("/home/mikedes/historicaldata/csvfiles/fnma_table.csv");
+        XMLCreators xmlc = new XMLCreators();
+        xmlc.convertFile("/home/mikedes/historicaldata/csvfiles/fnma_table.csv", "/home/mikedes/testfile.xml", ",");
 	}
 }
