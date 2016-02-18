@@ -10,8 +10,8 @@ public class JaxConverter {
     //2016-02-10,1.39,1.42,1.37,1.38,1459400,1.38,FNMA
 
 	public static void main(String[] args) throws IOException{
-        File csvfile = new File("/home/mikedes/historicaldata/csvfiles/fnma_table.csv");
+        File csvfile = new File("csv.file");
         XMLCreators xmlc = new XMLCreators();
-        xmlc.convertFile("/home/mikedes/historicaldata/csvfiles/fnma_table.csv", "/home/mikedes/testfile.xml", ",");
+        xmlc.convertFile("csv.file", "testfile.xml", ",");
 	}
 }
