@@ -27,5 +27,5 @@ Code to take in yahoo finance data and upload to mysql database. drop csv in 'wa
   jfreechart-1.0.19.jar
   jfxrt.jar
 
-4.JAX / XML classes to 
+4. JAX / XML classes to create xml file
 
