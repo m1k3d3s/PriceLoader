@@ -18,7 +18,7 @@ Code to take in yahoo finance data and upload to mysql database. drop csv in 'wa
 | timestamp_all | timestamp   | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTAMP |
 +---------------+-------------+------+-----+-------------------+-----------------------------+
 
-2. Config file should carry all the values needed by GetProperties class.
+8. Config file should carry all the values needed by GetProperties class.
 
 3. Necessary external jar files needed in build path. Java (java-8-oracle)
   opencsv-3.6.jar
