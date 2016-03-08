@@ -18,6 +18,7 @@ public class GetProperties {
 	String mychartstock=null;
 	String[] startdate=null;
 	String[] enddate=null;
+	String chartfor = null;
 	boolean dbsubmit;
 	String quotechar,valueseparator;
 	int linestoskip;
@@ -68,6 +69,8 @@ public class GetProperties {
 				valueseparator=value;
 			}else if(key.matches("linestoskip") && value != null){
 				linestoskip=Integer.valueOf(value);
+			}else if(key.matches("chartfor") && value != null){
+				chartfor=value;
 			}else {
 				System.out.println("Unknown key/value pair. Skipping."+key+" "+value);
 				System.out.println(key + " " + value);
@@ -104,6 +107,9 @@ public class GetProperties {
 	}
 	public String selectMyChartStock() {
 		return mychartstock;
+	}
+	public String selectChartFor(){
+		return chartfor;
 	}
 	public int[] selectStartDate() {	
 		int[] startdateint = new int[startdate.length];

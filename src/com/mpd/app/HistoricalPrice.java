@@ -11,7 +11,7 @@ public class HistoricalPrice {
 	String date,stock;
 	float open,high,low,close,adjclose;
 	int volume;
-	Date timestamp;
+	//Date timestamp;
 	
 	
 	public String getDate() {
@@ -62,10 +62,10 @@ public class HistoricalPrice {
 	public void setVolume(int volume) {
 		this.volume = volume;
 	}
-	public Date getTimestamp() {
-		return timestamp;
-	}
-	public void setTimestamp(Date timestamp) {
-		this.timestamp = timestamp;
-	}
+	//public Date getTimestamp() {
+	//	return timestamp;
+	//}
+	//public void setTimestamp(Date timestamp) {
+	//	this.timestamp = timestamp;
+	//}
 }

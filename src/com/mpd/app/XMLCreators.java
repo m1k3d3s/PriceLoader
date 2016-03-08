@@ -47,7 +47,7 @@ public class XMLCreators {
 	    try {
 	      Document newDoc = domBuilder.newDocument();
 	      // Root element
-	      org.w3c.dom.Element rootElement = newDoc.createElement("XMLCreators");
+	      org.w3c.dom.Element rootElement = newDoc.createElement("Stock");
 	      newDoc.appendChild((Node) rootElement);
 	      // Read csv file
 	      BufferedReader csvReader;

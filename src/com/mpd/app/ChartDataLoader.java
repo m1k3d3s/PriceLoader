@@ -28,6 +28,7 @@ public class ChartDataLoader extends Application {
 	public static void doDataLoad() throws SQLException {
 		Connection connect = null;
 		String stock = gp.selectStock();
+		String chartfor = gp.selectChartFor();
 		String sql = "select * from historicalprices where stock ="+"'"+stock+"'";
 		final Logger LOGGER = Logger.getLogger(DirWatcher.class.getName());
 		try {
@@ -128,15 +129,21 @@ public class ChartDataLoader extends Application {
 		xAxis.setLabel("Date");
 		final LineChart<String, Number> lineChart = new LineChart<String,Number>(xAxis, yAxis);
 		
-		lineChart.setTitle("Daily volume - " + gp.selectStock());
 		XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
 	
-		series.setName("Volume Data");
-		
-		while(resultSet.next()){
-			series.getData().add(new XYChart.Data<String, Number>(GetResultSetDate(), GetResultSetVolume()));
+		if(gp.selectChartFor().equalsIgnoreCase("closing")){
+			lineChart.setTitle("Daily close price - " + gp.selectStock());
+			series.setName("Close Price Data");
+			while(resultSet.next()){
+				series.getData().add(new XYChart.Data<String,Number>(GetResultSetDate(), GetResultSetClose()));
+			}
+		} else {
+			lineChart.setTitle("Daily volume - " + gp.selectStock());
+			series.setName("Daily Volume");
+			while(resultSet.next()){
+				series.getData().add(new XYChart.Data<String, Number>(GetResultSetDate(), GetResultSetVolume()));
+			}
 		}
-		
 		Scene scene = new Scene(lineChart, 800,900);
 		lineChart.getData().add(series);
 		
