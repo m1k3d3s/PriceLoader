@@ -1,6 +1,6 @@
 # PriceLoader - read in raw format to see database description.
 
-Code to take in yahoo finance data and upload to mysql database. drop csv in 'watched dir' and it will upload data to datda
+Code to take in yahoo finance data and upload to mysql database. drop csv in 'watched dir' and it will upload data to data. There are classes to launch charts , either final price or volume. Switch is made in the .config file.
 
 1. create database with the following columns
 
